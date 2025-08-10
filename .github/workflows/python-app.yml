@@ -44,7 +44,6 @@ jobs:
         mkdir dist
         python check_dataportal_upload.py -d 1M -out dist/ETC_{}{}_missing_uploads.html -t i
         python check_dataportal_upload.py -s FR -d 1M 1D -out dist/ETC_{}_{}_missing_uploads.html -t i
-              - name: Upload build artifact
     - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
