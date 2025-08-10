@@ -1,0 +1,12 @@
+stages:
+  - run
+
+run_python_module:
+  stage: run
+  image: python:3.11
+  script:
+    - pip install FrameworkAPI pandas matplotlib seaborn numpy calendar datetime
+    - python scripts/check_dataportal_upload.py -d 1M -out docs/ETC_{}{}_missing_uploads.html -t i
+    - python scripts/check_dataportal_upload.py -s FR -d 1M 1D -out docs/ETC_{}_{}_missing_uploads.html -t i
+  only:
+    - main
