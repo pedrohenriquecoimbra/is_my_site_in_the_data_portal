@@ -42,6 +42,5 @@ jobs:
         pytest
     - name: Real run
       run: |
-        pip install FrameworkAPI pandas matplotlib seaborn numpy calendar datetime
-        python scripts/check_dataportal_upload.py -d 1M -out docs/ETC_{}{}_missing_uploads.html -t i
-        python scripts/check_dataportal_upload.py -s FR -d 1M 1D -out docs/ETC_{}_{}_missing_uploads.html -t i
+        python check_dataportal_upload.py -d 1M -out docs/ETC_{}{}_missing_uploads.html -t i
+        python check_dataportal_upload.py -s FR -d 1M 1D -out docs/ETC_{}_{}_missing_uploads.html -t i
