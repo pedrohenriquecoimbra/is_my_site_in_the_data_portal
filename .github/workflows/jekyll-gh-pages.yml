@@ -78,7 +78,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: site-build
-          path: site/
+          path: docs/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
