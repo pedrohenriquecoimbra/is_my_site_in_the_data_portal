@@ -74,11 +74,14 @@ jobs:
         with:
           source: ./
           destination: ./_site
+      - name: Move from docs to root
+        run: |
+          mv ./_site/docs/* ./_site/
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: site-build
-          path: ./_site/docs/
+          path: _site/docs/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
