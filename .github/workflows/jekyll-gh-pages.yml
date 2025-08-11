@@ -78,7 +78,11 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: site-build
-          path: docs/
+        path: site-build/
+      - name: Move build to docs/
+        run: |
+          rm -rf docs/*
+          cp -r site-build/* docs/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
