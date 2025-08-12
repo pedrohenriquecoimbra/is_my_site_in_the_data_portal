@@ -73,6 +73,7 @@ jobs:
           path: site-build/
       - name: Move build to docs/
         run: |
+          mkdir -p docs
           cp -r site-build/* docs/
       - name: Checkout
         uses: actions/checkout@v4
