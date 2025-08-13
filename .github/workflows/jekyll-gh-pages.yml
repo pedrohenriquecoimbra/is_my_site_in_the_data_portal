@@ -71,9 +71,6 @@ jobs:
         with:
           name: site-build
           path: site-build/
-      - name: Move build to docs/
-        run: |
-          cp -r ./docs/* site-build/
       - name: Checkout
         uses: actions/checkout@v4
       - name: Setup Pages
@@ -81,8 +78,11 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: site-build/
+          source: ./
           destination: ./_site
+      - name: Move build to docs/
+        run: |
+          cp -r site-build/* ./_site/docs/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
