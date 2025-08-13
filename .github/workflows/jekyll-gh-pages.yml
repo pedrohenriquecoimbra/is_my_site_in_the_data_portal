@@ -83,6 +83,7 @@ jobs:
       - name: Move build to docs/
         run: |
           cp -r site-build/* ./docs/
+          rm -rf site-build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
